@@ -15,3 +15,4 @@ D:\PRN222\MyticsAura_group5\BLL\obj\Debug\net8.0\refint\BLL.dll
 D:\PRN222\MyticsAura_group5\BLL\obj\Debug\net8.0\BLL.pdb
 D:\PRN222\MyticsAura_group5\BLL\obj\Debug\net8.0\BLL.genruntimeconfig.cache
 D:\PRN222\MyticsAura_group5\BLL\obj\Debug\net8.0\ref\BLL.dll
+D:\PRN222\MyticsAura_group5\BLL\obj\Debug\net8.0\BLL.sourcelink.json

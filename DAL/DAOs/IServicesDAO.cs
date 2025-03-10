@@ -12,5 +12,7 @@ namespace DAL.DAOs
         Task<bool> AddToCart(int productId ,int userId, string size, int quantity);
         Task<List<CartItems>> GetCartItems(int userId);
         Task<User> GetUser(string email, string password);
+        Task<Order> CreateNewOrder(int userId, Decimal totalAmount);
+        Task<List<CartItems>> GetAllCartByUserId(int userId);  
     }
 }

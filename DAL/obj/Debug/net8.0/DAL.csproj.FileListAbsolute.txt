@@ -12,3 +12,4 @@ D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\refint\DAL.dll
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\DAL.pdb
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\DAL.sourcelink.json

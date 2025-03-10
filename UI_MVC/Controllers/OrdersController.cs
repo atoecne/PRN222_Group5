@@ -6,18 +6,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
+using BLL.Interface;
 
 namespace UI_MVC.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly Prn222Group5Context _context;
+        private readonly IRepository<Cart> _cartRepository;
+        private readonly IRepository<Order> _orderRepository;
+        private readonly IServicesReps _service;
 
-        public OrdersController(Prn222Group5Context context)
+        public OrdersController(Prn222Group5Context context, IRepository<Cart> cartRepository
+            , IServicesReps service, IRepository<Order> orderRepository)
         {
             _context = context;
+            _cartRepository = cartRepository;
+            _service = service;
+            _orderRepository= orderRepository;
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> Checkout()
+        {
+            int? userId = HttpContext.Session.GetInt32("UserID");
+            var cartItems = await _service.GetAllCartByUserId(userId.Value);
+            if (userId == null) {
+                return RedirectToAction("Login", "Users");
+            }
+            if (cartItems == null) {
+                return RedirectToAction("Index", "Products");
+            }
+            Decimal totalAmount = cartItems.Sum(item => item.TotalPrice);
+            var newOrder = await _service.CreateNewOrder(userId.Value, totalAmount);
+            int orderId = newOrder.OrderId;
+            var order = await _orderRepository.GetById(orderId);
+
+            var newModel = new CheckoutViewModel
+            {
+                OrderId = orderId,
+                CartItems = cartItems,
+                TotalAmount = totalAmount
+            };
+            return View(newModel);
+
+        }   
         // GET: Orders
         public async Task<IActionResult> Index()
         {

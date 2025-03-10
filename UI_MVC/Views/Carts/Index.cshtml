@@ -49,6 +49,7 @@
             <td>
             <a asp-action="Edit" asp-route-id="@item.CartID">Edit</a>
             <a asp-action="Delete" asp-route-id="@item.CartID">Delete</a>
+            <a asp-action="Checkout" asp-controller="Orders" class="btn btn-success">Mua hàng</a>
         </tr>
 }
     </tbody>

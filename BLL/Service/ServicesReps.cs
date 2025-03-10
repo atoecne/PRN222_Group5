@@ -21,6 +21,16 @@ namespace BLL.Service
             return await _servicesDAO.AddToCart(productId, userId, size, quantity);
         }
 
+        public async Task<Order> CreateNewOrder(int userId, Decimal totalAmount)
+        {
+          return await _servicesDAO.CreateNewOrder(userId, totalAmount);
+        }
+
+        public Task<List<CartItems>> GetAllCartByUserId(int userId)
+        {
+            return _servicesDAO.GetAllCartByUserId(userId);
+        }
+
         public async Task<List<CartItems>> GetCartItems(int userId)
         {
             return await _servicesDAO.GetCartItems(userId);

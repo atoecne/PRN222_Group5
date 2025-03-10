@@ -49,6 +49,40 @@ namespace DAL.DAOs
             return await _context.SaveChangesAsync() > 0;
         }
 
+        public async Task<Order> CreateNewOrder(int userId, Decimal totalAmout)
+        {
+            var order = new Order
+            {
+                UserId = userId,
+                TotalAmount = totalAmout,
+                CreatedAt = DateTime.Now
+            };
+            await _context.Orders.AddAsync(order);
+            await _context.SaveChangesAsync();
+
+            return order;
+        }
+
+        public async Task<List<CartItems>> GetAllCartByUserId(int userId)
+        {
+            var cartItems = await (from c in _context.Carts
+                                   join p in _context.Products on c.ProductId equals p.ProductId
+                                   join cat in _context.Categories on p.CategoryId equals cat.CategoryId
+                                   where c.UserId == userId
+                                   select new CartItems
+                                   {
+                                       CartID = c.CartId,
+                                       Size = c.Size,
+                                       ProductName = p.Name,
+                                       ProductImg = p.ImageUrl,
+                                       UnitPrice = p.Price,
+                                       Quantity = c.Quantity,
+                                       CategoryName = cat.CategoryName
+                                   }).ToListAsync();
+
+            return cartItems;
+        }
+
         // Lấy danh sách sản phẩm trong giỏ hàng
         public async Task<List<CartItems>> GetCartItems(int userId)
         {

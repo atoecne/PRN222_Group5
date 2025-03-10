@@ -290,3 +290,4 @@ D:\PRN222\MyticsAura_group5\UI_MVC\bin\Debug\net8.0\BLL.dll
 D:\PRN222\MyticsAura_group5\UI_MVC\bin\Debug\net8.0\DAL.dll
 D:\PRN222\MyticsAura_group5\UI_MVC\bin\Debug\net8.0\BLL.pdb
 D:\PRN222\MyticsAura_group5\UI_MVC\bin\Debug\net8.0\DAL.pdb
+D:\PRN222\MyticsAura_group5\UI_MVC\obj\Debug\net8.0\UI_MVC.sourcelink.json
