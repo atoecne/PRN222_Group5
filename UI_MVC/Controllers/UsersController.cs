@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using BLL.Interface;
+using Microsoft.CodeAnalysis.Scripting;
 
 namespace UI_MVC.Controllers
 {
@@ -46,6 +47,66 @@ namespace UI_MVC.Controllers
             ViewData["Error"] = "Email hoặc mật khẩu không đúng.";
             return View();
         }
+
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(user);
+            }
+
+            // Kiểm tra email và số điện thoại đã tồn tại
+            var existingUser = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == user.Email || u.Phone == user.Phone);
+
+            if (existingUser != null)
+            {
+                if (existingUser.Email == user.Email)
+                {
+                    ViewData["Error"] = "Email đã tồn tại!";
+                }
+                else
+                {
+                    ViewData["Error"] = "Số điện thoại đã được đăng ký!";
+                }
+                return View(user);
+            }
+
+            // Kiểm tra tuổi >= 5
+            var age = DateTime.Now.Year - user.Birthday.Year;
+            if (age < 5)
+            {
+                ViewData["Error"] = "Bạn phải từ 5 tuổi trở lên!";
+                return View(user);
+            }
+
+            // Thêm user vào database
+            try
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Đăng ký thành công!";
+                return RedirectToAction("Login");
+            }
+            catch (Exception ex)
+            {
+                ViewData["Error"] = "Lỗi khi lưu vào database: " + ex.Message;
+                return View(user);
+            }
+        }
+
+
+
+
+
+
         // GET: Users
         public async Task<IActionResult> Index()
         {

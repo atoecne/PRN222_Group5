@@ -1,106 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PRN222\\MyticsAura_group5\\",
+  "WorkspaceRootPath": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\carts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\carts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\carts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\carts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\carts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\carts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\daos\\genericdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\daos\\genericdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\models\\prn222group5context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\prn222group5context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\hk sp25 2025\\prn222\\prn222_group5\\ui_mvc\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\models\\cartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\cartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\hk sp25 2025\\prn222\\prn222_group5\\ui_mvc\\views\\users\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\users\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\prn222\\myticsaura_group5\\ui_mvc\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\hk sp25 2025\\prn222\\prn222_group5\\ui_mvc\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\daos\\servicesdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\daos\\servicesdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\hk sp25 2025\\prn222\\prn222_group5\\dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\models\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\models\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4027AE6B-8808-46EB-94E6-2AFA6256BBA4}|BLL\\BLL.csproj|d:\\prn222\\myticsaura_group5\\bll\\service\\servicesreps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4027AE6B-8808-46EB-94E6-2AFA6256BBA4}|BLL\\BLL.csproj|solutionrelative:bll\\service\\servicesreps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4027AE6B-8808-46EB-94E6-2AFA6256BBA4}|BLL\\BLL.csproj|d:\\prn222\\myticsaura_group5\\bll\\interface\\iservicesreps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4027AE6B-8808-46EB-94E6-2AFA6256BBA4}|BLL\\BLL.csproj|solutionrelative:bll\\interface\\iservicesreps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|d:\\prn222\\myticsaura_group5\\dal\\daos\\iservicesdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87749F7E-17C3-4C52-97C2-F10C99498DC6}|DAL\\DAL.csproj|solutionrelative:dal\\daos\\iservicesdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|d:\\hk sp25 2025\\prn222\\prn222_group5\\ui_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A64C2CB-93D7-4CA7-AEBB-AB5CDA183B72}|UI_MVC\\UI_MVC.csproj|solutionrelative:ui_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,335 +30,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\OrdersController.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "UI_MVC\\Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T14:45:12.62Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\User.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\User.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\User.cs",
-              "RelativeToolTip": "DAL\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T14:15:15.045Z",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Users\\Login.cshtml",
+              "RelativeDocumentMoniker": "UI_MVC\\Views\\Users\\Login.cshtml",
+              "ToolTip": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Users\\Login.cshtml",
+              "RelativeToolTip": "UI_MVC\\Views\\Users\\Login.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswEoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T16:56:29.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\OrderDetail.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\OrderDetail.cs",
-              "RelativeToolTip": "DAL\\Models\\OrderDetail.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T14:14:11.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Details.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Carts\\Details.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Details.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Carts\\Details.cshtml",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "UI_MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "UI_MVC\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T13:45:01.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Delete.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Carts\\Delete.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Delete.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Carts\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T13:43:42.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Edit.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Products\\Edit.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Edit.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Products\\Edit.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T13:42:53.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GenericDAO.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\GenericDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DAOs\\GenericDAO.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\GenericDAO.cs",
-              "RelativeToolTip": "DAL\\DAOs\\GenericDAO.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA1wCEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:50:31.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Program.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Program.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Program.cs",
-              "RelativeToolTip": "UI_MVC\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:13:48.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\appsettings.json",
-              "RelativeDocumentMoniker": "UI_MVC\\appsettings.json",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\appsettings.json",
-              "RelativeToolTip": "UI_MVC\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-09T12:13:39.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Edit.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Carts\\Edit.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Edit.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Carts\\Edit.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T12:01:02.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Users\\Login.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Users\\Login.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Users\\Login.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Users\\Login.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T11:57:34.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CartItems.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\CartItems.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\CartItems.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\CartItems.cs",
-              "RelativeToolTip": "DAL\\Models\\CartItems.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T11:55:10.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Index.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Carts\\Index.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Carts\\Index.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Carts\\Index.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAADYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T11:51:07.532Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "UI_MVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T11:30:00.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\UsersController.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "UI_MVC\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAswCoAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T11:19:02.73Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Prn222Group5Context.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\Prn222Group5Context.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Prn222Group5Context.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\Prn222Group5Context.cs",
-              "RelativeToolTip": "DAL\\Models\\Prn222Group5Context.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwCUAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T11:00:33.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CartRequest.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\CartRequest.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\CartRequest.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\Models\\CartRequest.cs",
-              "RelativeToolTip": "DAL\\Models\\CartRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:55:55.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\ProductsController.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "UI_MVC\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAqwCEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:25:46.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IServicesReps.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\BLL\\Interface\\IServicesReps.cs",
-              "RelativeDocumentMoniker": "BLL\\Interface\\IServicesReps.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\BLL\\Interface\\IServicesReps.cs",
-              "RelativeToolTip": "BLL\\Interface\\IServicesReps.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:24:42.369Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ServicesReps.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\BLL\\Service\\ServicesReps.cs",
-              "RelativeDocumentMoniker": "BLL\\Service\\ServicesReps.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\BLL\\Service\\ServicesReps.cs",
-              "RelativeToolTip": "BLL\\Service\\ServicesReps.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:24:40.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IServicesDAO.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\IServicesDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DAOs\\IServicesDAO.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\IServicesDAO.cs",
-              "RelativeToolTip": "DAL\\DAOs\\IServicesDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:22:42.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ServicesDAO.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\ServicesDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DAOs\\ServicesDAO.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAOs\\ServicesDAO.cs",
-              "RelativeToolTip": "DAL\\DAOs\\ServicesDAO.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAswB8AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:18:37.989Z",
+              "WhenOpened": "2025-03-14T16:56:26.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CartsController.cs",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\CartsController.cs",
-              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\CartsController.cs",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Controllers\\CartsController.cs",
-              "RelativeToolTip": "UI_MVC\\Controllers\\CartsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAAvAAAAAAAAAA==",
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Users\\Register.cshtml",
+              "RelativeDocumentMoniker": "UI_MVC\\Views\\Users\\Register.cshtml",
+              "ToolTip": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Views\\Users\\Register.cshtml",
+              "RelativeToolTip": "UI_MVC\\Views\\Users\\Register.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwFIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T13:27:29.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\DAL\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\User.cs",
+              "ToolTip": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\DAL\\Models\\User.cs",
+              "RelativeToolTip": "DAL\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:18:29.089Z",
+              "WhenOpened": "2025-03-14T13:21:57.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Index.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Products\\Index.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Index.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:03:43.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Details.cshtml",
-              "RelativeDocumentMoniker": "UI_MVC\\Views\\Products\\Details.cshtml",
-              "ToolTip": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\Views\\Products\\Details.cshtml",
-              "RelativeToolTip": "UI_MVC\\Views\\Products\\Details.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:03:42.516Z",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "UI_MVC\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "UI_MVC\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA5wFUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T11:19:02.73Z",
               "EditorCaption": ""
             }
           ]

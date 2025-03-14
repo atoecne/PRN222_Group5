@@ -7812,23 +7812,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj",
+      "projectUniqueName": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj",
       "projectName": "UI_MVC",
-      "projectPath": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\obj\\",
+      "projectPath": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\UI_MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7837,18 +7837,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj"
+            "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\BLL\\BLL.csproj"
             },
-            "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj"
+            "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\HK SP25 2025\\PRN222\\PRN222_Group5\\DAL\\DAL.csproj"
             }
           }
         }
@@ -7863,7 +7862,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -7913,7 +7912,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

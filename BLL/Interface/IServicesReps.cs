@@ -12,5 +12,8 @@ namespace BLL.Interface
         Task<bool> AddToCart(int productId, int userId, string size, int quantity);
         Task<List<CartItems>> GetCartItems(int userId);
         Task<User> GetUser(string email, string password);
+        Task<bool> Register(User user);
+        Task<List<User>> GetUsersAsync();
+        Task AddUser(User user);
     }
 }

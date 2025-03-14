@@ -17,6 +17,28 @@ namespace DAL.DAOs
         {
             _context = context;
         }
+
+
+        // Thêm phương thức đăng ký tài khoản
+        public async Task<bool> RegisterUser(User user)
+        {
+            // Kiểm tra xem email đã tồn tại hay chưa
+            var existingUser = await _context.Users.AnyAsync(u => u.Email == user.Email);
+            if (existingUser)
+            {
+                return false; // Email đã tồn tại
+            }
+
+            // Gán giá trị mặc định cho tài khoản mới
+            user.Role = "Customer";
+            user.CreatedAt = DateTime.Now;
+
+            // Thêm user vào database
+            await _context.Users.AddAsync(user);
+            return await _context.SaveChangesAsync() > 0; // Trả về true nếu thêm thành công
+        }
+
+
         public async Task<bool> AddToCart(int productId, int userId, string size, int quantity)
         {
             // Kiểm tra User có tồn tại không
@@ -49,6 +71,11 @@ namespace DAL.DAOs
             return await _context.SaveChangesAsync() > 0;
         }
 
+        public Task AddUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
         // Lấy danh sách sản phẩm trong giỏ hàng
         public async Task<List<CartItems>> GetCartItems(int userId)
         {
@@ -72,6 +99,16 @@ namespace DAL.DAOs
         public async Task<User> GetUser(string email, string password)
         {
             return await  _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+        }
+
+        public Task<List<User>> GetUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> SaveChangesAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

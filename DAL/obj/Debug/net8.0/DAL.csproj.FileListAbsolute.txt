@@ -12,3 +12,18 @@ D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\refint\DAL.dll
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\DAL.pdb
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\PRN222\MyticsAura_group5\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\bin\Debug\net8.0\DAL.dll
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\bin\Debug\net8.0\DAL.pdb
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.dll
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.pdb
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\HK SP25 2025\PRN222\PRN222_Group5\DAL\obj\Debug\net8.0\ref\DAL.dll

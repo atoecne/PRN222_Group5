@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+    
+}
+
+
+
+
+<style>
+    body {
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .register-container {
+        width: 350px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn-register {
+        width: 100%;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .btn-register:hover {
+            background-color: #218838;
+        }
+</style>
+
+<div class="register-container">
+    <h2>Đăng ký</h2>
+    <form action="/Users/Register" method="post">
+        <input class="form-control" type="text" name="FullName" placeholder="Họ và tên" required>
+        <input class="form-control" type="email" name="Email" placeholder="Email" required>
+        <input class="form-control" type="password" name="Password" placeholder="Mật khẩu" required>
+        <input class="form-control" type="text" name="Phone" placeholder="Số điện thoại" required>
+        <input class="form-control" type="text" name="Address" placeholder="Địa chỉ" required>
+        <input class="form-control" type="date" name="Birthday" placeholder="Ngày sinh" required>
+        <button type="submit" class="btn-register">Đăng ký</button>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+
+        @if (ViewData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @ViewData["Error"]
+            </div>
+        }
+    </form>
+
+</div>
