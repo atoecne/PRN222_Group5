@@ -6,24 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
+using BLL.Interface;
 
 namespace UI_Razor.Pages.Blogs
 {
     public class IndexModel : PageModel
     {
-        private readonly DAL.Models.Prn222Group5Context _context;
+        private readonly IBlogService _blogService;
 
-        public IndexModel(DAL.Models.Prn222Group5Context context)
+        public IndexModel(IBlogService blogService)
         {
-            _context = context;
+            _blogService = blogService;
         }
 
-        public IList<Blog> Blog { get;set; } = default!;
+        public IList<Blog> Blog { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Blog = await _context.Blogs
-                .Include(b => b.User).ToListAsync();
+            Blog = await _blogService.GetAllBlogsAsync();
         }
     }
 }

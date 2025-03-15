@@ -6,16 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
+using BLL.Interface;
 
 namespace UI_Razor.Pages.Blogs
 {
     public class DeleteModel : PageModel
     {
-        private readonly DAL.Models.Prn222Group5Context _context;
+        private readonly IBlogService _blogService;
 
-        public DeleteModel(DAL.Models.Prn222Group5Context context)
+        public DeleteModel(IBlogService blogService)
         {
-            _context = context;
+            _blogService = blogService;
         }
 
         [BindProperty]
@@ -23,38 +24,21 @@ namespace UI_Razor.Pages.Blogs
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var blog = await _context.Blogs.FirstOrDefaultAsync(m => m.BlogId == id);
+            var blog = await _blogService.GetBlogByIdAsync(id.Value);
+            if (blog == null) return NotFound();
 
-            if (blog == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                Blog = blog;
-            }
+            Blog = blog;
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var blog = await _context.Blogs.FindAsync(id);
-            if (blog != null)
-            {
-                Blog = blog;
-                _context.Blogs.Remove(Blog);
-                await _context.SaveChangesAsync();
-            }
+            var result = await _blogService.DeleteBlogAsync(id.Value);
+            if (!result) return NotFound();
 
             return RedirectToPage("./Index");
         }

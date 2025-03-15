@@ -7,71 +7,46 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
+using BLL.Interface;
 
 namespace UI_Razor.Pages.Blogs
 {
     public class EditModel : PageModel
     {
-        private readonly DAL.Models.Prn222Group5Context _context;
+        private readonly IBlogService blogService;
+        private readonly Prn222Group5Context _context;
 
-        public EditModel(DAL.Models.Prn222Group5Context context)
+        public EditModel(IBlogService blogService, Prn222Group5Context context)
         {
+            this.blogService = blogService;
             _context = context;
+
         }
 
         [BindProperty]
         public Blog Blog { get; set; } = default!;
 
+        [BindProperty]
+        public IFormFile? BlogImg { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var blog =  await _context.Blogs.FirstOrDefaultAsync(m => m.BlogId == id);
-            if (blog == null)
-            {
-                return NotFound();
-            }
+            var blog = await blogService.GetBlogByIdAsync(id.Value);
+            if (blog == null) return NotFound();
+
             Blog = blog;
-           ViewData["UserId"] = new SelectList(_context.Users, "UserId", "Email");
+            ViewData["UserId"] = new SelectList(_context.Users, "UserId", "Email");
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(Blog).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BlogExists(Blog.BlogId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            var updatedBlog = await blogService.UpdateBlogAsync(Blog, BlogImg); // Truyền cả Blog và BlogImg
+            if (updatedBlog == null) return NotFound();
 
             return RedirectToPage("./Index");
-        }
-
-        private bool BlogExists(int id)
-        {
-            return _context.Blogs.Any(e => e.BlogId == id);
         }
     }
 }

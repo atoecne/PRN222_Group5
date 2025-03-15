@@ -216,6 +216,7 @@ D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Micro
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 D:\From c\F\25\PRN222\FinalProject\PRN222_Group5\UI_Razor\bin\Debug\net8.0\Microsoft.Identity.Client.dll

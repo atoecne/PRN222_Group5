@@ -6,36 +6,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
+using BLL.Interface;
 
 namespace UI_Razor.Pages.Blogs
 {
     public class DetailsModel : PageModel
     {
-        private readonly DAL.Models.Prn222Group5Context _context;
+        private readonly IBlogService _blogService;
 
-        public DetailsModel(DAL.Models.Prn222Group5Context context)
+        public DetailsModel(IBlogService blogService)
         {
-            _context = context;
+            _blogService = blogService;
         }
 
         public Blog Blog { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var blog = await _context.Blogs.FirstOrDefaultAsync(m => m.BlogId == id);
-            if (blog == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                Blog = blog;
-            }
+            var blog = await _blogService.GetBlogByIdAsync(id.Value);
+            if (blog == null) return NotFound();
+
+            Blog = blog;
             return Page();
         }
     }

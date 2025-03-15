@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Blog.BlogId" />
             <div class="form-group">
@@ -26,18 +26,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Blog.BlogContent" class="control-label"></label>
-                <input asp-for="Blog.BlogContent" class="form-control" />
+                <textarea asp-for="Blog.BlogContent" class="form-control"></textarea>
                 <span asp-validation-for="Blog.BlogContent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Blog.BlogImg" class="control-label"></label>
-                <input asp-for="Blog.BlogImg" class="form-control" />
-                <span asp-validation-for="Blog.BlogImg" class="text-danger"></span>
+                <label asp-for="BlogImg" class="control-label">Blog Image</label>
+                <input type="file" asp-for="BlogImg" class="form-control" accept=".jpg,.jpeg,.png,.gif" />
+                <img src="@Model.Blog.BlogImg" alt="Current Image" style="max-width: 200px;" />
+                <span asp-validation-for="BlogImg" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Blog.CreatedAt" class="control-label"></label>
-                <input asp-for="Blog.CreatedAt" class="form-control" />
-                <span asp-validation-for="Blog.CreatedAt" class="text-danger"></span>
+                <input asp-for="Blog.CreatedAt" class="form-control" readonly />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -45,11 +45,12 @@
         </form>
     </div>
 </div>
-
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
