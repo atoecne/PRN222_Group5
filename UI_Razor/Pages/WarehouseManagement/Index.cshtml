@@ -1,0 +1,48 @@
+﻿@page
+@model UI_Razor.Pages.WarehouseManagement.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WareHouse[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WareHouse[0].LastUpdated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WareHouse[0].Product)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WareHouse) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.WareHouseId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.WareHouseId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.WareHouseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

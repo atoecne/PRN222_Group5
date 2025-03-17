@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using BLL.Interface;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace UI_MVC.Controllers
 {
@@ -28,25 +30,44 @@ namespace UI_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
-            var user = await _service.GetUser(email, password);
+            string hashedPassword = ComputeMD5Hash(password);
+
+            var user = await _service.GetUser(email, hashedPassword);
             if (user != null)
             {
                 HttpContext.Session.SetString("UserRole", user.Role);
                 HttpContext.Session.SetInt32("UserID", user.UserId);
+
+                HttpContext.Response.Cookies.Append("UserRole", user.Role, new CookieOptions { HttpOnly = true });
+                HttpContext.Response.Cookies.Append("UserID", user.UserId.ToString(), new CookieOptions { HttpOnly = true });
+
                 switch (user.Role)
                 {
                     case "Customer":
                         return RedirectToAction("Index", "Products");
-                    case "Staff":
-                        return RedirectToAction("Index", "Products");
                     case "Admin":
-                        return RedirectToAction("Index", "Products");
+                        return Redirect("https://localhost:7134");
                 }
             }
             ViewData["Error"] = "Email hoặc mật khẩu không đúng.";
             return View();
         }
-        // GET: Users
+        private string ComputeMD5Hash(string input)
+        {
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Chuyển đổi byte thành chuỗi hex
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("x2"));
+                }
+                return sb.ToString();
+            }
+        }
         public async Task<IActionResult> Index()
         {
             return View(await _context.Users.ToListAsync());

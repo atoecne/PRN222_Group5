@@ -29,6 +29,12 @@ namespace UI_MVC.Controllers
         {
             int? userId = HttpContext.Session.GetInt32("UserID");
 
+            int quantity =await _serviceRepository.QuantityInWareHouseByProductId(model.ProductId);
+
+            if(quantity < model.Quantity)
+            {
+                return Json(new { success = false, message = "Không thể thêm sản phẩm!" });
+            }
 
             bool isAdded = await _serviceRepository.AddToCart(model.ProductId, userId.Value, model.Size, model.Quantity);
 
@@ -42,7 +48,7 @@ namespace UI_MVC.Controllers
         public async Task<IActionResult> Index()
         {
             int? userId = HttpContext.Session.GetInt32("UserID"); 
-            var cartItems = await _serviceRepository.GetCartItems(userId.Value);
+            var cartItems = await _serviceRepository.GetAllCartByUserId(userId.Value);
             return View(cartItems);
         }
 
@@ -119,44 +125,60 @@ namespace UI_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CartId,UserId,ProductId,Quantity,CreatedAt,Size")] Cart cart)
         {
+            int quantity = await _serviceRepository.QuantityInWareHouseByProductId(cart.ProductId);
 
+            if (quantity < cart.Quantity)
+            {
+                return Json(new { success = false, message = "Số lượng trong kho không đủ!" });
+            }
             await _cartRepository.Update(cart);
-                return RedirectToAction(nameof(Index));
+            return Json(new { success = true, message = "Thay đổi thành công!" });
         }
 
-        // GET: Carts/Delete/5
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //GET: Carts/Delete/5
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cart = await _cartRepository.GetById(id);
-            if (cart == null)
-            {
-                return NotFound();
-            }
+        //    var cart = await _cartRepository.GetById(id);
+        //    if (cart == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(cart);
-        }
+        //    return View(cart);
+        //}
 
         // POST: Carts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var cart = await _cartRepository.GetById(id);
-            if (cart != null)
-            {
-               await _cartRepository.Delete(id);
-            }
-            return RedirectToAction(nameof(Index));
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    await _cartRepository.Delete(id);
+        //    return RedirectToAction("Index");
+        //}
 
         private bool CartExists(int id)
         {
             return _context.Carts.Any(e => e.CartId == id);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var cartItem = _context.Carts.Find(id);
+            if (cartItem == null)
+            {
+                return NotFound();
+            }
+
+            _context.Carts.Remove(cartItem);
+            _context.SaveChanges();
+            //_serviceRepository.DeleteCartById(id);
+            return Json(new { success = true });
         }
     }
 }

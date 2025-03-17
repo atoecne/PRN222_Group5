@@ -4,78 +4,109 @@
     ViewData["Title"] = "Details";
 }
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 <h1>Details</h1>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-    </dl>
-    <div>
-        <label for="size">Chọn kích thước:</label>
-        <select id="size" class="form-control">
-            <option value="S">Nhỏ</option>
-            <option value="M">Vừa</option>
-            <option value="L">Lớn</option>
-        </select>
-    </div>
+<div class="container">
+    <div class="row">
+        <!-- Left Column: Images -->
+        <div class="col-lg-6">
+                <img src="@Model.ImageUrl" alt="Main product image" class="img-fluid" style="width: 200px; height: 200px;">
+        </div>
+    
+        <div class="col-lg-6">
+            <h4>Product</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Name)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
 
-    <div>
-        <label for="quantity">Số lượng:</label>
-        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Description)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Price)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Price)</dd>
+            </dl>
+
+            <div class="d-flex align-items-center mb-3">
+                <label for="size" class="mr-2">Chọn kích thước:</label>
+                <div class="input-group" style="width: 150px;">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary btn-decrease" type="button">−</button>
+                    </div>
+                    <input type="text" id="size" class="form-control text-center" value="10.0 cm" readonly>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-increase" type="button">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity">Số lượng:</label>
+                <input type="number" id="quantity" class="form-control" min="1" value="1">
+            </div>
+
+            <div>
+                <button class="btn btn-success add-to-cart" data-id="@Model.ProductId">Thêm vào giỏ</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
     </div>
 </div>
-<div>
-    <button class="btn btn-success add-to-cart" data-id="@Model.ProductId">Thêm vào giỏ</button>
-    <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Thông báo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Nội dung thông báo sẽ được cập nhật qua JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+         document.querySelector(".btn-increase").addEventListener("click", function () {
+            let sizeElement = document.getElementById("size");
+            let currentSize = parseFloat(sizeElement.value); // Lấy giá trị hiện tại
+            if (currentSize < 22.0) { // Kiểm tra xem có nhỏ hơn 22 cm không
+                currentSize += 0.5; // Tăng thêm 0.5 cm
+                sizeElement.value = currentSize.toFixed(1) + " cm"; // Cập nhật giá trị
+            }
+        });
+
+        // Xử lý sự kiện cho nút giảm kích thước
+        document.querySelector(".btn-decrease").addEventListener("click", function () {
+            let sizeElement = document.getElementById("size");
+            let currentSize = parseFloat(sizeElement.value); // Lấy giá trị hiện tại
+            if (currentSize > 10.0) { // Kiểm tra xem có lớn hơn 10 cm không
+                currentSize -= 0.5; // Giảm đi 0.5 cm
+                sizeElement.value = currentSize.toFixed(1) + " cm"; // Cập nhật giá trị
+            }
+        });
+
         document.querySelector(".add-to-cart").addEventListener("click", function () {
                 let productId = this.getAttribute("data-id");
     let sizeElement = document.getElementById("size");
     let size = sizeElement ? sizeElement.value : null;
     let quantity = document.getElementById("quantity").value;
 
-    console.log("Selected size:", size); 
-    console.log("Quantity:", quantity);
+             console.log("Selected size:", size); 
+             console.log("Quantity:", quantity);
 
             fetch("/Carts/AddToCart", {
                 method: "POST",
@@ -86,7 +117,17 @@
                 if (!response.ok) return response.text().then(text => { throw new Error(text); });
                 return response.json();
             })
-            .then(data => console.log("Thêm vào giỏ thành công:", data))
+             .then(data => {
+                if (data.success) {
+                    // Hiển thị modal thông báo thành công
+                    $('#successModal .modal-body').text(data.message);
+                    $('#successModal').modal('show');
+                } else {
+                    // Hiển thị modal thông báo thất bại
+                    $('#successModal .modal-body').text(data.message);
+                    $('#successModal').modal('show');
+                }
+            })
             .catch(error => console.error("Lỗi API:", error.message));
         });
     });

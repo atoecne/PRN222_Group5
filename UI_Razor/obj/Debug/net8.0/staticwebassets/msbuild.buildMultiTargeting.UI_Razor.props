@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\UI_Razor.props" />
-</Project>

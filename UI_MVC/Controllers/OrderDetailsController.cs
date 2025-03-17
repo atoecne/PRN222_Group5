@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using BLL.Interface;
+using System.Reflection.Metadata.Ecma335;
 
 namespace UI_MVC.Controllers
 {
@@ -14,46 +15,58 @@ namespace UI_MVC.Controllers
     {
         private readonly Prn222Group5Context _context;
         private readonly IRepository<OrderDetail> _orderdetailsRepository;
+        private readonly IServicesReps _service;
 
-        public OrderDetailsController(Prn222Group5Context context, IRepository<OrderDetail> orderdetailRepository)
+        public OrderDetailsController(Prn222Group5Context context, IRepository<OrderDetail> orderdetailRepository, IServicesReps service)
         {
             _context = context;
             _orderdetailsRepository = orderdetailRepository;
+            _service = service;
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveOrderDetail(CheckoutViewModel model)
+        public async Task<IActionResult> SaveOrderDetail([FromBody] OrderRequestModel request)
         {
-            int? userId = HttpContext.Session.GetInt32("UserID");
-            if (userId == null) {
-                return View("Login", "Users");
-            }
-            if (!ModelState.IsValid)
-            {
-                return View("Checkout", model);
-            }
+                int? userId = HttpContext.Session.GetInt32("UserID");
+                if (userId == null)
+                {
+                    return RedirectToAction("Login", "Users");
+                }
+                if (request == null || request.CheckoutData == null || request.CustomerData == null)
+                {
+                    return BadRequest(new { message = "Dữ liệu không hợp lệ" }); // ✅ Trả về JSON hợp lệ
+                }
+                var orderDetails = request.CheckoutData.CartItems.Select(item => new OrderDetail
+                {
+                    OrderId = request.CheckoutData.OrderId,
+                    ProductId = item.ProductId,
+                    Size = item.Size,
+                    Quantity = item.Quantity,
+                    Price = item.UnitPrice,
+                    UserName = request.CustomerData.UserName,
+                    PhoneNumber = request.CustomerData.PhoneNumber,
+                    Address = request.CustomerData.Address
+                }).ToList();
+              
+                await _service.AddRange(orderDetails);
 
-            var orderDetail = new OrderDetail
-            {
-                OrderId = model.OrderId,
-                ProductId = model.ProductId,
-                Quantity = model.Quantity,
-                Price = model.Price,
-                Size = model.Size,
-                UserName = model.UserName,
-                PhoneNumber = model.PhoneNumber,
-                Address = model.Address
-            };
+                foreach (var item in orderDetails)
+                {
+                 await _service.UpdateQuantity(item.ProductId, item.Quantity);
+                }
+                await _service.DeleteCartByUserId(userId.Value);
 
-            await _orderdetailsRepository.Add(orderDetail);
-
-            return RedirectToAction("Index");
+                return Ok(new { message = "Đơn hàng đã được lưu thành công!" });
         }
 
         // GET: OrderDetails
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? orderId)
         {
-            var orderDetails = await _orderdetailsRepository.GetAll();
+            if(orderId == null || orderId == 0)
+            {
+                return View(new List<OrderDetail>());
+            }
+            var orderDetails = await _service.GetOrderDetailByOrderId(orderId.Value);
             return View(orderDetails);
         }
         // GET: OrderDetails/Details/5

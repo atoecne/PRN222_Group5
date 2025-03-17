@@ -16,14 +16,17 @@ namespace UI_MVC.Controllers
         private readonly IRepository<Cart> _cartRepository;
         private readonly IRepository<Order> _orderRepository;
         private readonly IServicesReps _service;
+        private readonly ILogger<OrdersController> _logger;
 
         public OrdersController(Prn222Group5Context context, IRepository<Cart> cartRepository
-            , IServicesReps service, IRepository<Order> orderRepository)
+            , IServicesReps service, IRepository<Order> orderRepository
+            , ILogger<OrdersController> logger)
         {
             _context = context;
             _cartRepository = cartRepository;
             _service = service;
             _orderRepository= orderRepository;
+            _logger = logger;
         }
 
 
@@ -35,20 +38,28 @@ namespace UI_MVC.Controllers
             if (userId == null) {
                 return RedirectToAction("Login", "Users");
             }
-            if (cartItems == null) {
+            if (cartItems == null || !cartItems.Any())
+            {
+                _logger.LogWarning("Giỏ hàng rỗng hoặc null cho user ID {UserID}", userId.Value);
                 return RedirectToAction("Index", "Products");
+            }
+
+            // Log từng item trong giỏ hàng
+            foreach (var item in cartItems)
+            {
+                _logger.LogInformation("Name: {ProductName}, Quantity: {Quantity}, TotalPrice: {TotalPrice}",
+                item.ProductName, item.Quantity, item.TotalPrice);
             }
             Decimal totalAmount = cartItems.Sum(item => item.TotalPrice);
             var newOrder = await _service.CreateNewOrder(userId.Value, totalAmount);
             int orderId = newOrder.OrderId;
             var order = await _orderRepository.GetById(orderId);
-
             var newModel = new CheckoutViewModel
             {
                 OrderId = orderId,
                 CartItems = cartItems,
-                TotalAmount = totalAmount
             };
+
             return View(newModel);
 
         }   

@@ -1,56 +1,247 @@
-﻿@model IEnumerable<DAL.Models.CartItems>
+﻿@* @model IEnumerable<DAL.Models.CartItems> *@
+
+@* @{ *@
+@*     ViewData["Title"] = "Index"; *@
+@* } *@
+
+@* <h1>Index</h1> *@
+
+@* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
+
+@* <table class="table"> *@
+@*     <thead> *@
+@*         <tr> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.ProductImg) *@
+@*             </th> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.ProductName) *@
+@*             </th> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.UnitPrice) *@
+@*             </th> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.Quantity) *@
+@*             </th> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.Size) *@
+@*             </th> *@
+@*             <th> *@
+@*                 @Html.DisplayNameFor(model => model.TotalPrice) *@
+@*             </th> *@
+            
+@*             <th></th> *@
+@*         </tr> *@
+@*     </thead> *@
+@*     <tbody> *@
+@* @foreach (var item in Model) { *@
+@*         <tr> *@
+@*             <td> *@
+@*                     @Html.DisplayFor(modelItem => item.ProductImg) *@
+@*             </td> *@
+@*             <td> *@
+@*                 @Html.DisplayFor(modelItem => item.ProductName) *@
+@*             </td> *@
+@*             <td> *@
+@*                 @Html.DisplayFor(modelItem => item.UnitPrice) *@
+@*             </td> *@
+@*             <td> *@
+@*                 @Html.DisplayFor(modelItem => item.Quantity) *@
+@*             </td> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.Size) *@
+@*                 </td> *@
+@*             <td> *@
+@*                 @Html.DisplayFor(modelItem => item.TotalPrice) *@
+@*             </td> *@
+@*             <td> *@
+@*             <a asp-action="Edit" asp-route-id="@item.CartId">Edit</a> *@
+@*             <button class="btn btn-danger btn-delete" data-id="@item.CartId">Delete</button> *@
+@*         </tr> *@
+@* } *@
+@*     </tbody> *@
+@* </table> *@
+@* <div class="mt-3"> *@
+@*     <a asp-action="Checkout" asp-controller="Orders" class="btn btn-success">Thanh toán</a> *@
+@* </div> *@
+
+@* <script> *@
+@*     $(document).ready(function () { *@
+@*         $(".btn-delete").click(function () { *@
+@*             var cartId = $(this).data("id"); *@
+
+@*             $.ajax({ *@
+@*                 url: "/Carts/Delete/" + cartId, *@
+@*                 type: "POST", *@
+@*                 success: function (result) { *@
+@*                     location.reload(); // Tải lại trang để cập nhật danh sách *@
+@*                 }, *@
+@*                 error: function () { *@
+@*                     alert("Xóa không thành công!"); *@
+@*                 } *@
+@*             }); *@
+@*         }); *@
+@*     }); *@
+@* </script> *@
+
+
+
+
+@model IEnumerable<DAL.Models.CartItems>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center text-3xl font-bold mb-8" style="font-family: 'Pacifico', cursive;">
+    Giỏ hàng của bạn
+</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductImg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalPrice)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductImg)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-            <a asp-action="Edit" asp-route-id="@item.CartID">Edit</a>
-            <a asp-action="Delete" asp-route-id="@item.CartID">Delete</a>
-            <a asp-action="Checkout" asp-controller="Orders" class="btn btn-success">Mua hàng</a>
-        </tr>
-}
-    </tbody>
-</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div class="flex flex-col lg:flex-row">
+    <div class="w-full lg:w-3/4">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="border-b-2 border-orange-300">
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.ProductImg)
+                    </th>
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.UnitPrice)
+                    </th>
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.Size)
+                    </th>
+                    <th class="py-2">
+                        @Html.DisplayNameFor(model => model.TotalPrice)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="border-b border-orange-300">
+                        <td class="py-4 flex items-center">
+                            <img src="@item.ProductImg" alt="Product image" class="w-12 h-12 rounded-lg bg-green-900" />
+                        </td>
+                        <td class="py-4">
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td class="py-4">
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td class="py-4">
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td class="py-4">
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </td>
+                        <td class="py-4">
+                            @Html.DisplayFor(modelItem => item.TotalPrice)
+                        </td>
+                        <td class="py-4">
+                            <a asp-action="Edit" asp-route-id="@item.CartId" class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger btn-delete" data-id="@item.CartId">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0">
+        <div class="border-l-2 border-orange-300 pl-4">
+            <h2 class="text-lg font-bold mb-4">
+                Tổng cộng
+            </h2>
+            <p class="mb-4">
+                Tổng tiền:
+                <span class="font-bold">
+                    @Model.Sum(x => x.TotalPrice).ToString("N0") VNĐ
+                </span>
+            </p>
+            <div class="mt-3">
+                <a asp-action="Checkout" asp-controller="Orders" class="btn btn-success w-full py-2">Thanh toán</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".btn-delete").click(function () {
+            var cartId = $(this).data("id");
+
+            $.ajax({
+                url: "/Carts/Delete/" + cartId,
+                type: "POST",
+                success: function (result) {
+                    location.reload(); // Tải lại trang để cập nhật danh sách
+                },
+                error: function () {
+                    alert("Xóa không thành công!");
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            color: #fff;
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .btn-success {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+        .btn-success:hover {
+            color: #fff;
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+</style>

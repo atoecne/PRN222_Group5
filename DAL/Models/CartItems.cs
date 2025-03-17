@@ -8,7 +8,8 @@ namespace DAL.Models
 {
     public class CartItems
     {
-        public int CartID { get; set; }
+        public int CartId { get; set; }
+        public int ProductId { get; set; }
 
         public string Size { get; set; }
         public string ProductName { get; set; }
@@ -16,6 +17,5 @@ namespace DAL.Models
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice => Quantity * UnitPrice;
-        public string CategoryName { get; set; } // Lấy từ bảng Category
     }
 }

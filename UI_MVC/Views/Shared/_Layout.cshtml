@@ -1,52 +1,65 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - UI_MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/UI_MVC.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - Mystic Aura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UI_MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<body class="bg-gray-100 font-roboto">
+    <div class="header bg-green-900 text-orange-500 flex items-center justify-between p-6 shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="flex items-center">
+            <img src="https://storage.googleapis.com/a1aa/image/I9dNhk7XlkyNdgxtDbkE0Xn_tRbM0cvwKxRPgWWV3VA.jpg" alt="Mystic Aura Logo" class="mr-2" width="50" height="50" />
+            <div>
+                <span class="header-title font-great-vibes text-3xl font-bold">Mystic Aura</span>
+                <div class="slogan font-playfair-display text-sm font-semibold">Phong thủy tinh hoa - Chấp cánh tài lộc</div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-user-circle text-orange-500"></i>
+            <span>Admin Atic</span>
+            <a href="/logout" class="logout-btn bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">Logout</a>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - UI_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <!-- Layout chính -->
+    <div class="flex flex-col mt-24">
+
+        <!-- Sidebar -->
+        <div class="sidebar bg-green-800 text-orange-500 p-4 fixed top-24 left-0 w-full flex justify-center space-x-6 shadow-md z-40">
+            <a class="nav-link flex items-center gap-2 p-3 hover:bg-orange-300/30 active:bg-orange-300/20 font-bold" href="/Products/Index">
+                <i class="fas fa-box"></i>
+                <span>Sản Phẩm</span>
+            </a>
+            <a class="nav-link flex items-center gap-2 p-3 hover:bg-orange-300/30" href="/Carts/Index">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Giỏ Hàng</span>
+            </a>
+            <a class="nav-link flex items-center gap-2 p-3 hover:bg-orange-300/30" href="/Orders/Index">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Đơn Hàng</span>
+            </a>
+            <a class="nav-link flex items-center gap-2 p-3 hover:bg-orange-300/30" href="/Blog">
+                <i class="fas fa-blog"></i>
+                <span>Blog</span>
+            </a>
+            <a class="nav-link flex items-center gap-2 p-3 hover:bg-orange-300/30" href="/HR">
+                <i class="fas fa-user-tie"></i>
+                <span>Nhân Sự</span>
+            </a>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+        <!-- Điều chỉnh nội dung chính -->
+        <div class="content flex-1 p-6 pt-40">
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
