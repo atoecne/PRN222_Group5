@@ -1,5 +1,6 @@
 ﻿using BLL.Interface;
 using DAL.DAOs;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,8 @@ namespace BLL.Service
         public async Task Add(T entity) => await _dao.Add(entity);
         public async Task Update(T entity) => await _dao.Update(entity);
         public async Task Delete(int id) => await _dao.Delete(id);
+        public async Task<double> GetAverageRatingByProductId(int productId) {
+           return await _dao.GetAverageRatingByProductId(productId);
+        }
     }
 }

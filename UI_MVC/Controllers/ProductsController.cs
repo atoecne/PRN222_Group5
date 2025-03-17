@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using BLL.Interface;
+using BLL.Service;
 
 namespace UI_MVC.Controllers
 {
@@ -14,11 +15,13 @@ namespace UI_MVC.Controllers
     {
         private readonly Prn222Group5Context _context;
         private readonly IRepository<Product> _productsRepository;
+        private readonly IRepository<Feedback> _feedbackRepo;
 
-        public ProductsController(Prn222Group5Context context, IRepository<Product> productsRepository)
+        public ProductsController(Prn222Group5Context context, IRepository<Product> productsRepository, IRepository<Feedback> feedbackRepo)
         {
             _context = context;
             _productsRepository = productsRepository;
+            _feedbackRepo = feedbackRepo;
         }
 
         // GET: Products
@@ -31,17 +34,19 @@ namespace UI_MVC.Controllers
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int id)
         {
+            var product = await _productsRepository.GetById(id);
             if (id == null)
             {
                 return NotFound();
             }
-
-            var product = await _productsRepository.GetById(id);
+        
             if (product == null)
             {
                 return NotFound();
             }
+            var averageRating = await _feedbackRepo.GetAverageRatingByProductId(id);
 
+            ViewBag.AverageRating = averageRating;
             return View(product);
         }
 

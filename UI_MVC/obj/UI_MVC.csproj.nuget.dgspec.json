@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj": {}
+    "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj": {}
   },
   "projects": {
-    "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj": {
+    "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj",
+        "projectUniqueName": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN222\\MyticsAura_group5\\BLL\\obj\\",
+        "projectPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj"
+              "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\DAL.csproj"
               }
             }
           }
@@ -48,13 +48,16 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -86,24 +89,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj": {
+    "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN222\\MyticsAura_group5\\DAL\\obj\\",
+        "projectPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -130,8 +133,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -168,24 +170,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj": {
+    "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj",
+        "projectUniqueName": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj",
         "projectName": "UI_MVC",
-        "projectPath": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\UI_MVC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN222\\MyticsAura_group5\\UI_MVC\\obj\\",
+        "projectPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\UI_MVC\\UI_MVC.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\UI_MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -201,11 +203,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj": {
-                "projectPath": "D:\\PRN222\\MyticsAura_group5\\BLL\\BLL.csproj"
-              },
-              "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\PRN222\\MyticsAura_group5\\DAL\\DAL.csproj"
+              "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\BLL.csproj": {
+                "projectPath": "D:\\FPT\\SP25-K7\\PRN222\\AProject\\PRN222_Group5\\BLL\\BLL.csproj"
               }
             }
           }
@@ -219,8 +218,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -270,7 +268,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

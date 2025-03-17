@@ -1,0 +1,150 @@
+﻿@model IEnumerable<DAL.Models.Feedback>
+
+@{
+    ViewData["Title"] = "Danh sách đánh giá sản phẩm";
+    var currentUserId = ViewBag.CurrentUserId as int?;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="mb-3">
+    <form method="get" asp-action="Index" class="d-flex align-items-center gap-2">
+        <input type="hidden" name="productId" value="@ViewBag.ProductId" />
+        <input type="hidden" name="pageNumber" value="1" />
+
+        <label for="ratingFilter" class="mb-0">Lọc theo đánh giá:</label>
+        <select name="ratingFilter" class="form-control w-auto" onchange="this.form.submit()">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string label = i == 0 ? "Tất cả" : $"{i} ⭐";
+                bool isSelected = ViewBag.RatingFilter == i;
+                <option value="@i" selected="@(isSelected ? "selected" : null)">@label</option>
+            }
+        </select>
+    </form>
+</div>
+
+<!-- Danh sách feedback -->
+@if (Model != null && Model.Any())
+{
+    foreach (var fb in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>@fb.User.FullName</h5>
+                <p>@fb.Comment</p>
+                <p>Đánh giá: @fb.Rating ⭐</p>
+                <p>Ngày: @(fb.CreatedAt?.ToString("dd/MM/yyyy") ?? "")</p>
+
+                @if (!string.IsNullOrEmpty(fb.FeedbackImg))
+                {
+                    <div class="mt-2">
+                        <img src="@fb.FeedbackImg" alt="Feedback Image" style="max-width: 300px; height: auto;" class="img-thumbnail" />
+                    </div>
+                }
+
+                @if (currentUserId.HasValue && fb.UserId == currentUserId.Value)
+                {
+                    <div class="mt-2">
+                        <button class="btn btn-warning btn-sm" onclick="toggleEditForm(@fb.FeedbackId)">Sửa</button>
+
+                        <form asp-controller="Feedbacks" asp-action="Delete" method="post" style="display:inline;" onsubmit="return confirm('Bạn chắc chắn muốn xoá?');">
+                            <input type="hidden" name="id" value="@fb.FeedbackId" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Xoá
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- FORM SỬA -->
+                    <div id="editForm-@fb.FeedbackId" style="display:none;" class="mt-3">
+                        <form asp-controller="Feedbacks" asp-action="Edit" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="FeedbackId" value="@fb.FeedbackId" />
+                            <input type="hidden" name="UserId" value="@fb.UserId" />
+                            <input type="hidden" name="ProductId" value="@fb.ProductId" />
+
+                            <div class="form-group">
+                                <label for="ratingFilter" class="mr-2">Lọc theo đánh giá:</label>
+                                <select name="ratingFilter" class="form-control" onchange="this.form.submit()">
+                                    @for (int i = 0; i <= 5; i++)
+                                    {
+                                        string label = i == 0 ? "Tất cả" : $"{i} ⭐";
+                                        bool isSelected = ViewBag.RatingFilter == i;
+                                        <option value="@i" selected="@(isSelected ? "selected" : null)">@label</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Comment">Comment</label>
+                                <textarea name="Comment" class="form-control">@fb.Comment</textarea>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(fb.FeedbackImg))
+                            {
+                                <div class="form-group">
+                                    <label>Ảnh hiện tại:</label><br />
+                                    <img src="@fb.FeedbackImg" alt="Ảnh hiện tại" style="max-width: 300px; height: auto;" class="img-thumbnail" />
+                                </div>
+                            }
+
+                            <div class="form-group">
+                                <label for="imageFile">Ảnh mới (nếu muốn đổi):</label>
+                                <input type="file" name="imageFile" class="form-control-file" />
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-success btn-sm">Lưu thay đổi</button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleEditForm(@fb.FeedbackId)">Huỷ</button>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>Chưa có đánh giá nào cho sản phẩm này.</p>
+}
+<!-- Phân trang -->
+<nav>
+    <ul class="pagination justify-content-center">
+        @if (ViewBag.CurrentPage > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?productId=@ViewBag.ProductId&pageNumber=@(ViewBag.CurrentPage - 1)&ratingFilter=@ViewBag.RatingFilter">Previous</a>
+            </li>
+        }
+
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                <a class="page-link" href="?productId=@ViewBag.ProductId&pageNumber=@i&ratingFilter=@ViewBag.RatingFilter">@i</a>
+            </li>
+        }
+
+        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?productId=@ViewBag.ProductId&pageNumber=@(ViewBag.CurrentPage + 1)&ratingFilter=@ViewBag.RatingFilter">Next</a>
+            </li>
+        }
+    </ul>
+</nav>
+<a asp-controller="Products" asp-action="Details" asp-route-id="@ViewBag.ProductId" class="btn btn-secondary">
+    Quay lại chi tiết sản phẩm
+</a>
+
+@section Scripts {
+    <script>
+        function toggleEditForm(feedbackId) {
+            const formDiv = document.getElementById(`editForm-${feedbackId}`);
+            if (formDiv.style.display === 'none' || formDiv.style.display === '') {
+                formDiv.style.display = 'block';
+            } else {
+                formDiv.style.display = 'none';
+            }
+        }
+    </script>
+}

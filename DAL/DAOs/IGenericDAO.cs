@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,6 @@ namespace DAL.DAOs
         Task Add(T entity);
         Task Update(T entity);
         Task Delete(int id);
+        Task<double> GetAverageRatingByProductId(int productId);     
     }
 }

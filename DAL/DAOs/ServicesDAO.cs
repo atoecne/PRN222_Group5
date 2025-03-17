@@ -19,14 +19,14 @@ namespace DAL.DAOs
         }
         public async Task<bool> AddToCart(int productId, int userId, string size, int quantity)
         {
-            // Kiểm tra User có tồn tại không
+           
             var userExists = await _context.Users.AnyAsync(u => u.UserId == userId);
             if (!userExists)
             {
                 throw new Exception("Người dùng không tồn tại trong hệ thống!");
             }
 
-            // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+           
             var cartItem = await _context.Carts.FirstOrDefaultAsync(c => c.ProductId == productId && c.UserId == userId);
 
             if (cartItem != null && size == cartItem.Size)
@@ -49,13 +49,13 @@ namespace DAL.DAOs
             return await _context.SaveChangesAsync() > 0;
         }
 
-        // Lấy danh sách sản phẩm trong giỏ hàng
+       
         public async Task<List<CartItems>> GetCartItems(int userId)
         {
             var userExists = await _context.Users.AnyAsync(u => u.UserId == userId);
             return await _context.Carts
         .Where(c => c.UserId == userId)
-        .Include(c => c.Product) // Include để lấy thông tin sản phẩm
+        .Include(c => c.Product) 
         .Select(c => new CartItems
         {
             CartID = c.CartId,
@@ -73,5 +73,35 @@ namespace DAL.DAOs
         {
             return await  _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
         }
+
+        public async Task<IEnumerable<Feedback>> GetAllFeedbacks()
+        {
+            var feedbacks = await _context.Feedbacks
+        .Include(f => f.User)   
+        .Include(f => f.Product)
+        .ToListAsync();
+            return feedbacks;
+        }
+     
+        public async Task<List<Feedback>> GetFbByProductPaged(int productId, int pageNumber, int pageSize, int ratingfilter = 0)
+        {
+            var query = _context.Feedbacks
+            .Include(f => f.User)
+            .Include(f => f.Product)
+            .Where(f => f.ProductId == productId);
+
+            if(ratingfilter > 0)
+            {
+                query = query.Where(f => f.Rating == ratingfilter);
+            }
+
+            var pagedFb = await query
+                .OrderByDescending(f => f.CreatedAt)
+                .Skip((pageNumber - 1) * pageSize)      // Skip phân trang
+                .Take(pageSize)                         // Take phân trang
+                .ToListAsync(); 
+            return pagedFb;
+        }
+
     }
 }

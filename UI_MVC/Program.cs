@@ -24,6 +24,7 @@ builder.Services.AddScoped(typeof(IGenericDAO<>), typeof(GenericDAO<>));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IServicesReps, ServicesReps>();
 builder.Services.AddScoped<IServicesDAO, ServicesDAO>();
+builder.Services.AddScoped<IFeedback, FeedbackService>();
 
 
 var app = builder.Build();

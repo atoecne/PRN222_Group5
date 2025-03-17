@@ -1,8 +1,18 @@
+using BLL.Interface;
+using BLL.Service;
+using DAL.DAOs;
+using DAL.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IReportDAO, ReportDAO>();
+builder.Services.AddScoped<IReport, ReportService>();
 
+builder.Services.AddDbContext<Prn222Group5Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

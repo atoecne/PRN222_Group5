@@ -1,0 +1,67 @@
+﻿@model DAL.Models.Feedback
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Feedback</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @* Hidden Fields *@
+            <input type="hidden" asp-for="FeedbackId" />
+            <input type="hidden" asp-for="UserId" />
+            <input type="hidden" asp-for="ProductId" />
+
+            @* Rating *@
+            <div class="form-group">
+                <label for="Rating">Chọn đánh giá</label>
+                <select name="Rating" class="form-control w-50" required>
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+            </div>
+
+            @* Comment *@
+            <div class="form-group">
+                <label asp-for="Comment" class="control-label"></label>
+                <textarea asp-for="Comment" class="form-control"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+
+            @* Ảnh hiện tại *@
+            @if (!string.IsNullOrEmpty(Model.FeedbackImg))
+            {
+                <div class="form-group">
+                    <label>Ảnh hiện tại:</label><br />
+                    <img src="@Model.FeedbackImg" alt="Ảnh hiện tại" style="max-width: 300px; height: auto;" class="img-thumbnail" />
+                </div>
+            }
+
+            @* Upload ảnh mới *@
+            <div class="form-group">
+                <label for="imageFile">Ảnh mới (nếu muốn đổi):</label>
+                <input type="file" name="imageFile" class="form-control-file" />
+            </div>
+
+            @* Submit *@
+            <div class="form-group mt-3">
+                <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                <a asp-action="Index" asp-route-productId="@Model.ProductId" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
