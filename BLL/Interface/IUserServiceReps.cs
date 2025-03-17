@@ -1,13 +1,13 @@
-﻿using DAL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Models;
 
 namespace BLL.Interface
 {
-    public interface IServicesReps
+    public interface IUserServiceReps
     {
         Task<bool> AddToCart(int productId, int userId, string size, int quantity);
         Task<List<CartItems>> GetCartItems(int userId);
@@ -19,9 +19,6 @@ namespace BLL.Interface
         Task<User> GetUserById(int id);
         Task<bool> UpdateUser(User user);
         Task<bool> DeleteUser(int id);
-       
-
-
-
+        
     }
 }

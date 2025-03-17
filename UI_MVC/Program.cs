@@ -6,6 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Đăng ký UserServiceReps
+builder.Services.AddScoped<IUserServiceReps, UserServicesReps>();
+
+
 // Add services to the container.
 builder.Services.AddSession(options =>
 {

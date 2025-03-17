@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using DAL.Models;
+using Microsoft.AspNetCore.Http;
 using BLL.Interface;
-using Microsoft.CodeAnalysis.Scripting;
+using DAL.Models;
 
 namespace UI_MVC.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly Prn222Group5Context _context;
-        private readonly IServicesReps _service;
+        private readonly IUserServiceReps _service;
 
-        public UsersController(Prn222Group5Context context, IServicesReps service)
+        public UsersController(IUserServiceReps service)
         {
-            _context = context;
             _service = service;
         }
+
+        // Trang đăng nhập
         public IActionResult Login()
         {
             return View();
@@ -29,26 +25,35 @@ namespace UI_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
-            var user = await _service.GetUser(email, password);
-            if (user != null)
+            try
             {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                {
+                    ViewData["Error"] = "Vui lòng nhập email và mật khẩu.";
+                    return View();
+                }
+
+                var user = await _service.GetUser(email, password);
+                if (user == null)
+                {
+                    ViewData["Error"] = "Email hoặc mật khẩu không đúng.";
+                    return View();
+                }
+
+                // Đăng nhập thành công
                 HttpContext.Session.SetString("UserRole", user.Role);
                 HttpContext.Session.SetInt32("UserID", user.UserId);
-                switch (user.Role)
-                {
-                    case "Customer":
-                        return RedirectToAction("Index", "Products");
-                    case "Staff":
-                        return RedirectToAction("Index", "Products");
-                    case "Admin":
-                        return RedirectToAction("Index", "Products");
-                }
+                return RedirectToAction("Index", "Products");
             }
-            ViewData["Error"] = "Email hoặc mật khẩu không đúng.";
-            return View();
+            catch (Exception ex)
+            {
+                ViewData["Error"] = "Đã xảy ra lỗi: " + ex.Message;
+                return View();
+            }
         }
 
 
+        // Trang đăng ký
         public IActionResult Register()
         {
             return View();
@@ -61,185 +66,118 @@ namespace UI_MVC.Controllers
             {
                 return View(user);
             }
-
-            // Kiểm tra email và số điện thoại đã tồn tại
-            var existingUser = await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == user.Email || u.Phone == user.Phone);
-
-            if (existingUser != null)
-            {
-                if (existingUser.Email == user.Email)
-                {
-                    ViewData["Error"] = "Email đã tồn tại!";
-                }
-                else
-                {
-                    ViewData["Error"] = "Số điện thoại đã được đăng ký!";
-                }
-                return View(user);
-            }
-
-            // Kiểm tra tuổi >= 5
-            var age = DateTime.Now.Year - user.Birthday.Year;
-            if (age < 5)
-            {
-                ViewData["Error"] = "Bạn phải từ 5 tuổi trở lên!";
-                return View(user);
-            }
-
-            // Thêm user vào database
             try
             {
-                _context.Users.Add(user);
-                await _context.SaveChangesAsync();
+                var success = await _service.Register(user);
+                if (!success)
+                {
+                    ViewData["Error"] = "Email hoặc số điện thoại đã tồn tại!";
+                    return View(user);
+                }
                 TempData["Success"] = "Đăng ký thành công!";
                 return RedirectToAction("Login");
             }
             catch (Exception ex)
             {
-                ViewData["Error"] = "Lỗi khi lưu vào database: " + ex.Message;
+                ViewData["Error"] = "Đã xảy ra lỗi: " + ex.Message;
                 return View(user);
             }
         }
 
-
-
-
-
-
-        // GET: Users
+        // Danh sách user (Admin)
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            var users = await _service.GetUsers();
+            return View(users);
         }
 
-        // GET: Users/Details/5
+        // Chi tiết user
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.UserId == id);
+            var user = await _service.GetUserById(id.Value);
             if (user == null)
-            {
                 return NotFound();
-            }
 
             return View(user);
         }
 
-        // GET: Users/Create
+        // Tạo mới user (nếu cần)
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,FullName,Email,Password,Phone,Address,Birthday,Role,Destiny,CreatedAt")] User user)
+        public async Task<IActionResult> Create(User user)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(user);
+
+            var success = await _service.Register(user);
+            if (!success)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewData["Error"] = "Email đã tồn tại!";
+                return View(user);
             }
-            return View(user);
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Users/Edit/5
+        // Chỉnh sửa user (profile)
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _service.GetUserById(id.Value);
             if (user == null)
-            {
                 return NotFound();
-            }
+
             return View(user);
         }
 
-        // POST: Users/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,FullName,Email,Password,Phone,Address,Birthday,Role,Destiny,CreatedAt")] User user)
+        public async Task<IActionResult> Edit(int id, User user)
         {
             if (id != user.UserId)
-            {
                 return NotFound();
-            }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.UserId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(user);
+            if (!ModelState.IsValid)
+                return View(user);
+
+            var success = await _service.UpdateUser(user);
+            if (!success)
+                return NotFound();
+
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Users/Delete/5
+        // Xóa user
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.UserId == id);
+            var user = await _service.GetUserById(id.Value);
             if (user == null)
-            {
                 return NotFound();
-            }
 
             return View(user);
         }
 
-        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user != null)
-            {
-                _context.Users.Remove(user);
-            }
+            var success = await _service.DeleteUser(id);
+            if (!success)
+                return NotFound();
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool UserExists(int id)
-        {
-            return _context.Users.Any(e => e.UserId == id);
         }
     }
 }

@@ -13,5 +13,8 @@ namespace BLL.Interface
         Task Add(T entity);
         Task Update(T entity);
         Task Delete(int id);
+        Task<string?> GetById(object value);
+
     }
+
 }

@@ -22,5 +22,10 @@ namespace BLL.Service
         public async Task Add(T entity) => await _dao.Add(entity);
         public async Task Update(T entity) => await _dao.Update(entity);
         public async Task Delete(int id) => await _dao.Delete(id);
+
+        public Task<string?> GetById(object value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
