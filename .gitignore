@@ -8,3 +8,6 @@ obj/
 *.dbbin/
 obj/
 .vs/
+bin/
+obj/
+.vs/
