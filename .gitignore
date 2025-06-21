@@ -1,9 +1,22 @@
+# Build output
 bin/
 obj/
+
+# Visual Studio
 .vs/
-*.dll
+*.user
+*.suo
+
+# Other temp files
 *.pdb
+*.dll
 *.cache
-*.exe
-*.vsidx
 *.json
+*.db
+*.exe
+*.props
+*.log
+*.tmp
+*.nuget.g.props
+*.nuget.dgspec.json
+*.assets.cache
